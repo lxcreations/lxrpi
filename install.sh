@@ -19,6 +19,7 @@ LXRPi should only be installed on a Raspberry Pi running Raspian
 Please review the README.md and text files in the notes directory
 for more details before installing.
 The lxrpi directory in your $HOME directory must remain, DO NOT DELETE!"
+echo
 
 while true; do
     read -p "Do you wish to install LXRPi? [y/n]: " doinstall
@@ -31,6 +32,7 @@ done
 
 #display the current OS
 echo "Current OS Version: "$PRETTY_NAME
+echo
 
 #Install ONLY if we are running Raspian
 if [ "$ID" != "raspbian" ]; then
@@ -43,10 +45,12 @@ fi
 #get the current hostname
 HOSTNAME=$(hostname)
 
-for file in $(find $SOURCEDIR/dotfiles/. -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
-  if [ ! -L $HOME/$file ]; then
+for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
+  if [ -e $HOME/$file ]; then
     echo "Backup original dotfile: "$file
-    mv -f $HOME/$file{,.dtbak}
+    if [ ! -h $HOME/$file ]; then
+      mv -f $HOME/$file{,.dtbak}
+    fi
   fi
   
   if [ ! -e $HOME/$file ]; then
@@ -117,16 +121,18 @@ if [ ! -e /usr/sbin/samba ]; then
     APTINSTALLS="$APTINSTALLS samba samba-common-bin"
 fi
 
-echo "These packages need to be installed."
-echo $APTINSTALLS
-
-while true; do
-    read -p "Would you like to install these via apt-get? [y/n]: " doinstall
-    case $doinstall in
-        [Yy]* )
-            echo "installing";
-            echo
-            if [ "$APTINSTALLS" != "" ]; then
+if [ "$APTINSTALLS" != "" ]; then
+  echo "These packages need to be installed."
+  echo $APTINSTALLS
+  echo
+  
+  while true; do
+      read -p "Would you like to install these via apt-get? [y/n]: " doinstall
+      case $doinstall in
+          [Yy]* )
+              echo "installing";
+              echo
+              
               AGINSLOG=$HOME/.lxrpi_logs/aptgetoninstall_$(date +%Y%m%d_%H%M%S).log
               sudo apt-get update; sudo apt-get install -y $APTINSTALLS > $AGINSLOG 2>&1
               echo "
@@ -140,12 +146,13 @@ while true; do
               NOTES:samba.txt-Modify /etc/samba/smb.conf for best results of file sharing
               =================================================================================
               "
-            fi
-            break;;
-        [Nn]* ) echo "skipping"; break;;
-        * ) echo "Please answer y for yes or n for no.";;
-    esac
-done
+              echo
+              break;;
+          [Nn]* ) echo "skipping"; break;;
+          * ) echo "Please answer y for yes or n for no.";;
+      esac
+  done
+fi
 
 
 #install the update notice script in crontab
@@ -155,6 +162,7 @@ echo "The Update Notice checks for updates via apt and emails you the results.
 It is installed as a cronjob to run once a week, Sunday at 1AM.
 This only notifies you of updates, it does not install them.
 The sendemail package is required and will be installed if needed if you choose yes."
+echo
 while true; do
     read -p "Would you like to install the Update Notice cron job? [y/n]: " doinstall
     case $doinstall in
@@ -177,6 +185,7 @@ done
 echo "LXRPi can be updated via cron as well. This will run as a cronjob on
 Sunday at 1:30 AM. This requires git to be installed. If git is missing, it will
 be automatically installed if you choose yes."
+echo
 while true; do
     read -p "Would you like to auto-update LXRPi? [y/n]: " doinstall
     case $doinstall in
