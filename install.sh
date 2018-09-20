@@ -5,7 +5,7 @@ STAMP=$(date +%Y%m%d_%H%M%S)
 SOURCEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 #include the baspi config file
-source $SOURCEDIR/config/basepi.conf
+source $SOURCEDIR/config/lxrpi.conf
 
 #create initial ID variable for OS
 ID="unknown"
