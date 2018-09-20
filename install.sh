@@ -46,16 +46,17 @@ fi
 #get the current hostname
 HOSTNAME=$(hostname)
 
-for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
-  if [ ! -e $HOME/$file ]; then
-    echo "Backup original dotfile: "$file
-    mv -f $HOME/$file{,.dtbak}
-  fi
-  
-  if [ ! -e $HOME/$file ]; then
-    echo "Install custom dotfiles: "$file
-    ln -s $SOURCEDIR/dotfiles/$file $HOME/$file
-  fi
+for file in $(find $SOURCEDIR/dotfiles/. -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
+   if [ -e $HOME/$file ]; then
+     if [ ! -L $HOME/$file ]; then
+       echo "Backup original dotfile: "$file
+       mv -f $HOME/$file{,.dtbak}
+     fi
+   fi
+   if [ ! -e $HOME/$file ]; then
+     echo "Install custom dotfiles: "$file
+     ln -s $SOURCEDIR/dotfiles/$file $HOME/$file
+   fi
 done
 echo "Dotfiles installed"
 
