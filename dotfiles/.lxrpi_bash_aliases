@@ -1,6 +1,9 @@
 alias ll='ls -l'
 alias la='ls -ACF'
 alias l='ls -CF'
+alias lsa='ls --color -l -A -hF --group-directories-first'
+alias ..='cd ..'
+alias ...='cd ../../'
 alias dd='dd status=progress'
 alias !='sudo '
 alias less='less -R'
@@ -13,25 +16,40 @@ alias newbash='source $HOME/.bashrc'
 alias showalias='cat $HOME/.bash_aliases'
 alias lxalias='cat $HOME/.lxrpi_bash_aliases'
 alias shutd='sudo shutdown -P now'
+alias reboot='sudo reboot'
 alias chx='chmod +x'
 alias free="free -mt"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias mount='mount |column -t'
+alias now='date +"%T"'
+alias nowdate='date +"%Y-%m-%d %T"'
+alias ping='ping -c 5'
+alias ports='netstat -tulanp'
+lias ff='find . -type f -name'
+alias fd='find . -type d -name'
 
-#USE WITH EXTREAM CAUSION
+#USE WITH EXTREAM CAUTION
 alias god='sudo -i'
 
 #added to make useing apt-get friendlier
-alias apt-install='sudo apt-get install'
-alias apt-search='apt-cache search'
-alias apt-show='apt-cache show'
-alias apt-purge='sudo apt-get --purge  remove'
-alias apt-remove='sudo apt-get remove'
-alias apt-up='sudo apt-get update'
-alias apt-autoup='sudo apt-get update; sudo apt-get upgrade -y'
-alias apt-fullup='sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove'
+alias agins='sudo apt-get install'
+alias agser='apt-cache search'
+alias agpur='sudo apt-get --purge  remove'
+alias agrem='sudo apt-get remove'
+alias agup='sudo apt-get update'
+alias agfull='sudo apt-get update; sudo apt-get upgrade -y'
 
 
 #custom Functions ===============================================================================
+#make a directory and change to it
+mcd() { mkdir -p -- "$1"; cd -- "$1" }
+
+#change to a directory and list all files
+cls() { cd -- "$1"; ls -ACF }
+
+#backup a file and append .bkup to the end
+bkup() { cp -- "$1"{,.bkup}; }
+
 #extract various compressed archives
 ex () {
   if [ -f $1 ] ; then
