@@ -14,7 +14,8 @@ ID="unknown"
 source /etc/os-release
 
 
-echo "LXRPi install script.
+echo "LXRPi install script =============================================
+
 LXRPi should only be installed on a Raspberry Pi running Raspian
 Please review the README.md and text files in the notes directory
 for more details before installing.
@@ -46,11 +47,9 @@ fi
 HOSTNAME=$(hostname)
 
 for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
-  if [ -e $HOME/$file ]; then
+  if [ ! -e $HOME/$file ]; then
     echo "Backup original dotfile: "$file
-    if [ ! -h $HOME/$file ]; then
-      mv -f $HOME/$file{,.dtbak}
-    fi
+    mv -f $HOME/$file{,.dtbak}
   fi
   
   if [ ! -e $HOME/$file ]; then
