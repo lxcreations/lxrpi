@@ -25,7 +25,7 @@ alias now='date +"%T"'
 alias nowdate='date +"%Y-%m-%d %T"'
 alias ping='ping -c 5'
 alias ports='netstat -tulanp'
-lias ff='find . -type f -name'
+alias ff='find . -type f -name'
 alias fd='find . -type d -name'
 
 #USE WITH EXTREAM CAUTION
