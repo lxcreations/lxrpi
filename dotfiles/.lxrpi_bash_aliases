@@ -42,10 +42,10 @@ alias agfull='sudo apt-get update; sudo apt-get upgrade -y'
 
 #custom Functions ===============================================================================
 #make a directory and change to it
-mcd() { mkdir -p -- "$1"; cd -- "$1" }
+mcd() { mkdir -p -- "$1"; cd -- "$1"; }
 
 #change to a directory and list all files
-cls() { cd -- "$1"; ls -ACF }
+cls() { cd -- "$1"; ls -ACF; }
 
 #backup a file and append .bkup to the end
 bkup() { cp -- "$1"{,.bkup}; }
