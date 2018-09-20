@@ -1,9 +1,15 @@
+echo "Welcome $USER!"
+echo -e "Today is $(date)"
+uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
+echo "$HOSTNAME is ready and waiting!"
+
 alias ll='ls -l'
 alias la='ls -ACF'
 alias l='ls -CF'
 alias lsa='ls --color -l -A -hF --group-directories-first'
 alias ..='cd ..'
 alias ...='cd ../../'
+alias ....='cd ../../../'
 alias dd='dd status=progress'
 alias !='sudo '
 alias less='less -R'
@@ -22,7 +28,7 @@ alias free="free -mt"
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias mount='mount |column -t'
 alias now='date +"%T"'
-alias nowdate='date +"%Y-%m-%d %T"'
+alias nowdt='date +"%Y-%m-%d %T"'
 alias ping='ping -c 5'
 alias ports='netstat -tulanp'
 alias ff='find . -type f -name'
@@ -49,6 +55,12 @@ cls() { cd -- "$1"; ls -ACF; }
 
 #backup a file and append .bkup to the end
 bkup() { cp -- "$1"{,.bkup}; }
+
+#show uptime simple
+myuptime () {
+  uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
+  return;
+}
 
 #extract various compressed archives
 ex () {
