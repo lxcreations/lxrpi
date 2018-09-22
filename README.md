@@ -50,5 +50,15 @@ To install the LXRPi Project:
 - create ~/scripts directory
 	- a directory to store your custom scripts
 	- this scripts directory is exported as an execicutable path via .bashrc (line: 15)
+- copy email config template to ~/.lxrpi_email.conf
+	- used to send email notifications via lxrpi scritps
+	- this config file must be modified with your personal information
+- check for basic software packages
+	- marks ones missing to be installed if wanted by user
+- cronjob install of updatenotice.sh
+	- send email of system updates available if wanted by user
+- cronjob install of lxrpi_update.sh
+	- update lxrpi via git and email results if wanted by user
+
 
 

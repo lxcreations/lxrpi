@@ -139,11 +139,8 @@ if [ "$APTINSTALLS" != "" ]; then
               ================================================================================
               Review $AGINSLOG for install details
               
-              This choice is marked as yes in your basepi update config file
-              $INSTALLDIR/update.conf
-              
-              NOTES:snmpd.txt-Modify /etc/snmp/snmpd.conf for best results of snmp monitoring
-              NOTES:samba.txt-Modify /etc/samba/smb.conf for best results of file sharing
+              Modify /etc/snmp/snmpd.conf for best results of snmp monitoring
+              Modify /etc/samba/smb.conf for best results of file sharing
               =================================================================================
               "
               echo
