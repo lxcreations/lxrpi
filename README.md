@@ -7,3 +7,28 @@ Additional .bash files and scripts used on my Raspberry Pi's
 > For more information and inspiring projects, check out the Awesome Raspberry Pi Projects below
 
 ## Awesome Raspberry Pi Projects [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/thibmaek/awesome-raspberry-pi)
+
+## Contents
+
+- [About](#about)
+- [Install](#install)
+- [Uninstall](#uninstall)
+- [Bash Modifations](#bashmods)
+- [Bash Scripts](#bashscripts)
+
+## About
+
+The LXRPi Project is a set of basic files containing bash modifications and bash scripts to help you work with the Raspberry Pi (RPi) a little quicker. This project was originally created for use on the RPi's I use on my Egg Farm and Grow Op, Local Fields Ranch. With the support of other users, I have decided to make this repo a little more general and friendlier to new RPi users.
+
+## Install
+
+*GIT is a prerequisite for this package to be use as intended.*
+
+To find out if you have git installed, RUN:
+```which git```
+
+To install git, RUN:
+```sudo apt-get install git```
+
+To install this repo, RUN:
+```git clone https://github.com/lxcreations/lxrpi.git```
