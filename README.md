@@ -13,8 +13,8 @@ Additional .bash files and scripts used on my Raspberry Pi's
 - [About](#about)
 - [Install](#install)
 - [Uninstall](#uninstall)
-- [Bash Modifations](#bashmods)
-- [Bash Scripts](#bashscripts)
+- [Bash Modifations](#bash-modifications)
+- [Bash Scripts](#bash-scripts)
 
 ## About
 
