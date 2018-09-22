@@ -13,7 +13,7 @@ Additional .bash files and scripts used on my Raspberry Pi's
 - [About](#about)
 - [Install](#install)
 - [Uninstall](#uninstall)
-- [Bash Modifications](#bash-modifications)
+- [Bash Mods](#bash-mods)
 - [Bash Scripts](#bash-scripts)
 
 ## About
@@ -80,12 +80,12 @@ To install the LXRPi Project:
 	```
 	┌─[user@hostname]─[current_working_directory]
 	└──╼ $
-
+	```
 - **.lxrpi_bash_aliases**: shortcode entries and functions
 	- To see full list, RUN: ```less ~/.lxrpi_bash_aliases```
 
 
-
+## Bash Scripts
 
 
 
