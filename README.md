@@ -41,5 +41,14 @@ To install the LXRPi Project:
 - Run: ```./install.sh```
 
 **install.sh run through**
+- back up original dotfiles
+	- to ensure your original configurations are not lost in case of uninstall
+- create symlinks to lxrpi dotfiles
+	- allows for easy update and removal
+- create ~/.lxrpi_logs directory
+	- logs lxrpi
+- create ~/scripts directory
+	- a directory to store your custom scripts
+	- this scripts directory is exported as an execicutable path via .bashrc (line: 15)
 
 
