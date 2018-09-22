@@ -60,5 +60,14 @@ To install the LXRPi Project:
 - cronjob install of lxrpi_update.sh
 	- update lxrpi via git and email results if wanted by user
 
+## Uninstall
+
+**uninstall.sh**
+- removes lxrpi dotfile symlinks and restores original dotfiles.
+- removes cronjob entries related to lxrpi
+- removes .lxrpi_logs directory
+- removes .lxrpi_email.conf
+- Does not remove installed packages or ~/scripts directory
+- Does not removes installed packages installed via Apt-Get
 
 
