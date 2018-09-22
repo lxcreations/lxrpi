@@ -25,7 +25,7 @@ This project is designed for the Raspberry Pi running Raspbian. It should work o
 
 ## Install
 
-*GIT is a prerequisite for this package to be use as intended.*
+*GIT is a prerequisite for this package to be used as intended.*
 
 To find out if you have git installed, RUN:
 ```which git```
@@ -36,14 +36,10 @@ To install git, RUN:
 To install this repo, RUN:
 ```git clone https://github.com/lxcreations/lxrpi.git```
 
+To install the LXRPi Project:
+- Change directory to the project: ```cd lxrpi```
+- Run: ```./install.sh```
 
-**install.sh** - install all dotfiles and software used on the Raspberry Pi in the users home directory, usually /home/pi
-- Install also creates a scripts directory (~/scripts) for you to place custom bash, python, and other scripts. This directory is also placed in the .bashrc as an executable path
-- Installs packages if needed
-	- git <<  used to get GIT packages/repos
-	- sendemail << send email via bash scripts
-	- python-pip << install python packages
-	- python-pip3 << install python3 packages
-	- sysstat << get system status information
-	- snmp << monitor with snmp protocol
-	- samba << file sharing with Windows, Mac and Linux
+**install.sh run through**
+
+
