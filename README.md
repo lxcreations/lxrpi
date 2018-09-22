@@ -15,6 +15,8 @@ Additional .bash files and scripts used on my Raspberry Pi's
 - [Uninstall](#uninstall)
 - [Bash Mods](#bash-mods)
 - [Bash Scripts](#bash-scripts)
+- [Initial Setup](#initial-setup)
+
 
 ## About
 
@@ -91,7 +93,18 @@ To install the LXRPi Project:
 
 - **lxrpi_update.sh**: Updates the LXRPi project via Git
 
-
+## Initial Setup
+If you have not already done so, you should run the Raspberry Pi Configuration Tool
+```
+sudo raspi-config
+```
+- Option 1: Change User password << change to something more familure
+- Option 2: Network Options
+	- Sub-Option 1: Hostname << set a unique name for the Raspberry Pi
+- Option 4: Localisation Options
+	- Sub-Option 2: Change Timezone << set to your local timezone
+- Option 5: Interfacing Options
+	- Sub-Option 2: SSH << enable ssh
 
 
 ### License
