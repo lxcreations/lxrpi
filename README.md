@@ -70,7 +70,7 @@ To install the LXRPi Project:
 - Does not remove installed packages or ~/scripts directory
 - Does not removes installed packages installed via Apt-Get
 
-## Bash Modifations
+## Bash Mods
 - **.bashrc**: most notible change in is the appearance of the shell prompt
 	
 	```
@@ -86,7 +86,14 @@ To install the LXRPi Project:
 
 
 ## Bash Scripts
+- **updatenotice.sh**: Checks to see if there are any updates available for you RPi and send you an email with the details
+	- does not install the updates
+
+- **lxrpi_update.sh**: Updates the LXRPi project via Git
 
 
 
 
+### License
+
+[![GPL3](https://www.gnu.org/graphics/gplv3-88x31.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)
