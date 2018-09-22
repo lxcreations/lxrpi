@@ -70,4 +70,23 @@ To install the LXRPi Project:
 - Does not remove installed packages or ~/scripts directory
 - Does not removes installed packages installed via Apt-Get
 
+## Bash Modifations
+- **.bashrc**: most notible change in is the appearance of the shell prompt
+	
+	```
+	user@hostname:~$
+	```
+	*becomes*
+	```
+	┌─[user@hostname]─[current_working_directory]
+	└──╼ $
+
+- **.lxrpi_bash_aliases**: shortcode entries and functions
+	- To see full list, RUN: ```less ~/.lxrpi_bash_aliases```
+
+
+
+
+
+
 
